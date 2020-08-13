@@ -9,15 +9,23 @@ let addsidemenu = function(page){
         let item = sidemenuItems[i];
         var addsubmenu = false;
         if(item.hasOwnProperty('subItems')){
-            let subitems = item.subItems;
-            subitems.forEach(element => {
-                if(element.item == page)
-                {
-                    addsubmenu = true;
-                    return;
-                }
-            });
+            if(item == page)
+            {
+                addsubmenu = true;
+            }
+            else
+            {
+                let subitems = item.subItems;
+                subitems.forEach(element => {
+                    if(element.item == page)
+                    {
+                        addsubmenu = true;
+                        return;
+                    }
+                });
+            }
         }
+
         if( addsubmenu == false)
         {
             let link = '';
@@ -43,6 +51,20 @@ let addsidemenu = function(page){
         }
         else
         {
+            if(item == page && item.link != '#')
+            {
+                let menuItem = document.createElement("li");
+                let menuItemContent = '<a href="' + link + '">'+ item.item +'</a>'; 
+                menuItem.innerHTML = menuItemContent;
+                menuItem.classList.add('navigation-items');
+                menuItem.classList.add('hover-highlight');
+                if(page == item.item)
+                {
+                    menuItem.setAttribute("id", "active-page");
+                }
+                sidemenu.appendChild(menuItem);
+            }
+
             let subitems = item.subItems;
             let submenu = '<ul id="sub-navigation-bar">';
             for(var j = 0; j< subitems.length; j++)

@@ -14,7 +14,12 @@ request.onload = function(){
     for(let i = 0; i < webelements.length; i++)
     {
         let element = webelements[i]; 
-        if(element.type == 'p')
+        if(element.type == 'header')
+        {
+            let header = document.getElementsByClassName("content-header")[0];
+            header.innerHTML = element.content.toUpperCase();
+        }
+        else if(element.type == 'p')
         {
             content += '<p>' + element.content + '</p>';
         }
@@ -26,7 +31,7 @@ request.onload = function(){
                 logostart = false;
             }
             content +='<div class = "col-xl-4 col-lg-6 col-md-12">'+
-                        '<a target = "_blank" href = "'+ element.source +'">'+
+                        '<a href = "'+ element.source +'">'+
                             '<div class = "home-logo-container">' +
                                 '<img class = "home-logo" src = "assets/logos/home/' + element.logo+ '">'+
                                 '<p>'+element.content+'</p>' +

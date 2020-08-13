@@ -14,7 +14,12 @@ request.onload = function(){
     {
         let element = webelements[i]; 
         let type = element.type.toLowerCase(); 
-        if(type == 'p')
+        if(type == 'header')
+        {
+            let header = document.getElementsByClassName("content-header")[0];
+            header.innerHTML = element.content.toUpperCase();
+        }
+        else if(type == 'p')
         {
             content += '<p>' + element.content + '</p>';
         }
@@ -52,7 +57,7 @@ request.onload = function(){
             content +='<div class = "col-xl-4 col-lg-6 col-md-12">'+
                         '<a target = "_blank" href = "'+ element.source +'">'+
                             '<div class = "home-logo-container">' +
-                                '<img class = "home-logo" src = "assets/image/' + element.logo+ '">'+
+                                '<img class = "home-logo" src = "assets/images/' + element.logo+ '">'+
                                 '<p>'+element.content+'</p>' +
                             '</div>'+
                         '</a>'+
