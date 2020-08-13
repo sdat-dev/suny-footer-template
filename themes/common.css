@@ -102,6 +102,11 @@ Primary use:    Common.css file used for styling header and
     position: relative;
 }
 
+#page-header{
+    width: 100%;
+    position: relative;
+}
+
 .learn-more-text {
     text-decoration: underline;
     color: #46166b;

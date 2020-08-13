@@ -269,7 +269,7 @@
 }
 
 .test>button {
-    background-image: url("https://www.albany.edu/themes/albany_bootstrap_theme/images/menu-arrow.png");
+    background-image: url("../assets/images/menu-arrow.png");
     color: #eeb211;
     width: 160px;
     height: 48px;
@@ -283,14 +283,10 @@
     color: white;
 }
 
-
-
-
 ul .listSub a:hover, ul .listSub a:focus {
     color:white;
    }
 
-   
-   .fa-facebook-f:hover{
+.fa-facebook-f:hover{
     color:yellow;
   }
