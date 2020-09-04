@@ -114,4 +114,7 @@ let addheader =  function (headers){
     header.innerHTML = content;
 }
 
-$('.carousel').carousel({pause: false});
+$('.carousel').carousel({pause: "false",
+ interval: 2000
+
+});
